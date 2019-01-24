@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <script src="Reference/JavaScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="Reference/StyleSheet.css" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
+    
+    
+
+    <title>Accelerate Task</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    
+<body>
+    <form id="form1" runat="server">
+    <div id="header"> 
+        Precision
+        <br />
+        <br />
+        
+       <!-- <asp:Button ID="Button1" style="float:right ; margin: 1px ; color:burlywood" runat="server" Height="30px" Text="Dashboard" OnClick="Button1_Click" Width="75px" />-->
+        
+    </div>
+
+    <div id="main">
+        <div class="topnav" id="myTopnav">
+        <a href="Default.aspx" onload="">Project Summary</a>
+        <a href="Research.aspx">Research & Development</a>
+        <a href="Commercial.aspx">Commercial</a>
+        <a href="Supply.aspx">Global Supply</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+            <div class="search-container">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button></div>
+    </div>
+
+        <asp:ContentPlaceHolder id="BodyContent" runat="server">
+            <p>
+                <br />
+            </p>
+        </asp:ContentPlaceHolder>
+    
+    </form>
+
+</body>
+    
+</html>
